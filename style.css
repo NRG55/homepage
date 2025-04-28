@@ -1,7 +1,8 @@
 body { 
+    display: grid;
+    justify-content: center;
     margin: 0;
-    background-color: rgb(219, 215, 215);
-
+    background-color: rgb(236, 231, 231);
 }
 
 header, main, footer {
@@ -14,7 +15,19 @@ header {
     padding-top: 2rem;      
 }
 
-h1 {
+body::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 15rem;
+    background-color: gray;
+    transform-origin: 0;
+    transform: skewY(-10deg);
+    box-shadow: 0rem 0.1rem 1rem black;
+}
+
+header h1 {
     position: absolute;
     left: 1.5rem;
     bottom: 1rem;    
@@ -23,8 +36,7 @@ h1 {
 
 .image-container {    
     position: relative;   
-    max-width: 360px;
-    height: 360px;    
+    height: 240px;    
     display: block;
 }
 
@@ -61,6 +73,8 @@ main {
         float: left;             
         display: block;
         padding-right: 1rem;
+        max-width: 300px;
+        height: 360px;
     }
     
     header {
@@ -71,12 +85,62 @@ main {
         display: block;   
         margin: 5rem 1.5rem 0 7.5rem;
         background-color: white;
-        padding: 4rem 2rem;       
+        padding: 3.5rem 2rem;       
     }
 
-    h1 {
+    header .social-media-links-container {
+        display: none;
+    }
+
+    header h1 {
         left: initial;
         top: 0;
         right: -2.5rem;
     };
+    
+    body {
+        margin: 0;       
+    }
+
+    body::before {
+       height: 28rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    header, main, footer {
+        max-width: 1400px;
+    }
+
+    header {
+       display: grid;
+       grid-template-columns: 1fr auto;
+       align-items: center;
+    }
+
+    header .image-container {
+        display: block;       
+        padding-right:0;
+        width: 300px;
+        height: 360px;
+    }
+
+    header .info-container { 
+        display: grid;
+        justify-items: start;  
+        margin: 0;    
+        padding: 2rem 2rem;       
+    }
+
+    header h1 {
+        top: initial;
+        right: initial;       
+        left: 1.5rem;
+        bottom: 1rem;        
+    }
+
+    header .social-media-links-container {
+        display: block;
+        justify-self: end;
+    }
 }
