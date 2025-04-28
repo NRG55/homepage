@@ -2,7 +2,23 @@ body {
     display: grid;
     justify-content: center;
     margin: 0;
-    background-color: rgb(236, 231, 231);
+    background-color: rgb(235, 239, 240);
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 15rem;
+    background-color: rgb(53, 63, 77);
+    transform-origin: 0;
+    transform: skewY(-10deg);
+    box-shadow: 0px 1px 4px 2px rgba(0, 0, 0, 0.3);
+}
+
+a {
+    text-decoration: none;
 }
 
 header, main, footer {
@@ -15,34 +31,23 @@ header {
     padding-top: 2rem;      
 }
 
-body::before {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    width: 100%;
-    height: 15rem;
-    background-color: gray;
-    transform-origin: 0;
-    transform: skewY(-10deg);
-    box-shadow: 0rem 0.1rem 1rem black;
-}
-
 header h1 {
     position: absolute;
     left: 1.5rem;
     bottom: 1rem;    
-    color: white;
+    color: rgb(235, 239, 240);
 }
 
 .image-container {    
-    position: relative;   
-    height: 240px;    
-    display: block;
+    position: relative;
+    display: block; 
+    box-shadow: 0px 1px 4px 2px rgba(0, 0, 0, 0.3); 
+    height: 240px;       
 }
 
 header img {
     width: 100%;
-    height: 100%;
+    height: 100%;    
 }
 
 header .info-container {
@@ -50,6 +55,15 @@ header .info-container {
     justify-items: center;
     text-align: justify;
     text-wrap: wrap;
+
+    img {
+        width: 1.5rem;
+    }
+}
+
+header .social-media-links-container {
+    display: flex;   
+    gap: 1rem;
 }
 
 main {
@@ -61,7 +75,9 @@ main {
     background-color: white;
     position: relative;
     display: grid;
-    border: solid 1px black;   
+    border-radius: 0.5rem;
+    box-shadow: 0px 12px 28px -12px rgba(0, 0, 0, 0.25);
+    overflow: hidden; 
 }
 
 .card img {
@@ -72,7 +88,7 @@ main {
     .image-container {       
         float: left;             
         display: block;
-        padding-right: 1rem;
+        margin-right: 1rem;
         max-width: 300px;
         height: 360px;
     }
@@ -85,7 +101,9 @@ main {
         display: block;   
         margin: 5rem 1.5rem 0 7.5rem;
         background-color: white;
-        padding: 3.5rem 2rem;       
+        padding: 3rem 2rem;
+        border-radius: 0.5rem;
+        box-shadow: 0px 12px 28px -6px rgba(0, 0, 0, 0.25);
     }
 
     header .social-media-links-container {
@@ -105,6 +123,12 @@ main {
     body::before {
        height: 28rem;
     }
+
+    .cards-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+    }
 }
 
 @media (min-width: 1024px) {
@@ -120,7 +144,7 @@ main {
 
     header .image-container {
         display: block;       
-        padding-right:0;
+        margin-right: -1rem;
         width: 300px;
         height: 360px;
     }
@@ -129,7 +153,7 @@ main {
         display: grid;
         justify-items: start;  
         margin: 0;    
-        padding: 2rem 2rem;       
+        padding: 2rem 2rem 2rem 2.5rem;       
     }
 
     header h1 {
@@ -140,7 +164,11 @@ main {
     }
 
     header .social-media-links-container {
-        display: block;
+        display: flex;
         justify-self: end;
+    }
+
+    .cards-container {      
+        grid-template-columns: repeat(4, 1fr);       
     }
 }
