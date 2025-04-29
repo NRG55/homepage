@@ -1,6 +1,10 @@
+:root {
+    --dark-grey: rgb(53, 63, 77);
+}
+
 body { 
     display: grid;
-    justify-content: center;
+    justify-content: center;   
     margin: 0;
     background-color: rgb(235, 239, 240);
 }
@@ -11,7 +15,7 @@ body::before {
     z-index: -1;
     width: 100%;
     height: 15rem;
-    background-color: rgb(53, 63, 77);
+    background-color: var(--dark-grey);
     transform-origin: 0;
     transform: skewY(-10deg);
     box-shadow: 0px 1px 4px 2px rgba(0, 0, 0, 0.3);
@@ -19,6 +23,13 @@ body::before {
 
 a {
     text-decoration: none;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin: 0;
+    padding: 2rem 0 1rem 0;
 }
 
 header, main, footer {
@@ -39,11 +50,8 @@ header h1 {
 }
 
 .image-container {    
-    position: relative;
-    display: block; 
-    box-shadow: 0px 1px 4px 2px rgba(0, 0, 0, 0.3); 
-    height: 240px;
-    overflow: hidden;       
+    position: relative;   
+    height: 240px;          
 }
 
 header img {
@@ -58,10 +66,10 @@ header .info-container {
     text-wrap: wrap;    
 }
 
-header .social-media-links-container {
+.social-media-links-container {
     display: flex;   
     gap: 1rem;
-    color: blue;
+    padding: 0.5rem;
 
     img {
         height: 1.5rem;
@@ -75,14 +83,20 @@ header .social-media-links-container {
 
 main {
     display: grid;
-    justify-content: center;
+    justify-content: center; 
+    padding-bottom: 2rem;  
 }
 
-.image-container {
-    transition: all 0.8s ease;
+.image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0px 1px 4px 2px rgba(0, 0, 0, 0.3); 
+    overflow: hidden;
+    transition: all 0.8s ease; 
 }
 
-.image-container::before {
+.image-wrapper::before {
     content: '';
     position: absolute;
     top: -50%;
@@ -97,17 +111,22 @@ main {
     );
     transform: rotate(-45deg);
     transition: all 0.8s ease;
-    opacity: 0;
-  }
+    opacity: 0;   
+}
 
-  .image-container:hover {
+.image-wrapper:hover {
     transform: perspective(3000px) rotateY(10deg);    
-  }
+}
 
-  .image-container:hover::before {
+.image-wrapper:hover::before {
     opacity: 1;
     transform: rotate(-45deg) translateY(100%);
-  }
+}
+
+.cards-container {
+    display: grid;
+    gap: 1rem; 
+}
 
 .card {
     position: relative;
@@ -170,6 +189,51 @@ main {
     padding-bottom: 0.5rem;
 }
 
+footer {
+    display: grid;    
+    justify-items: center;
+    padding-top: 2rem;    
+    background-color: var(--dark-grey);
+    color: white;
+    margin: 0;    
+}
+
+footer .contact-info-container {
+    padding-bottom: 5rem;
+
+    h2 {
+        padding-top: 0;
+    }
+    
+    p {
+        font-size: 1.5rem;
+        padding-bottom: 2rem;
+    }
+    
+    .contact-address {
+        padding-bottom: 2rem;
+    }
+
+    .contact-email {
+        padding-bottom: 1rem;
+    }    
+    
+    .social-media-links-container {
+        justify-content: center;
+    }
+}
+
+.footer-image-container {
+    margin: 0 -2rem;
+
+    img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+
+
 @media (min-width: 600px) {
     .image-container {       
         float: left;             
@@ -197,10 +261,10 @@ main {
     }
 
     header h1 {
-        position: fixed;
+        position: absolute;
         left: initial;
-        top: 2rem;
-        left: 17.5rem;
+        top: 0;
+        right: -3rem;
     };
     
     body {
