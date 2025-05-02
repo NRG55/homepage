@@ -10,10 +10,15 @@
     <header>
         <div class="image-container">
             <div class="image-wrapper">
-                <img 
+                <picture>
+                    <source srcset="assets/images/header-image-desktop.jpg" media="(min-width: 1024px)">
+                    <source srcset="assets/images/header-image-tablet.jpg" media="(min-width: 600px)">                   
+                    <img src="assets/images/header-image-mobile.jpg" alt="">
+                </picture>
+                <!-- <img 
                     src="assets/images/header-image.jpg" 
                     alt=""
-                />
+                /> -->
             </div>
             <h1>Dmitry</h1>
         </div>
@@ -45,8 +50,12 @@
         <h2>My work</h2>
         <div class="cards-container">
             <div class="card">
-                <img src="assets/images/boat.png" alt="">
-                <img class="top-image" src="assets/images/battleship.png" alt="">
+                <div class="card-image">
+                    <img src="assets/images/battleship.png" alt="">
+                    <div class="card-image-cover">
+                        <img src="assets/images/battleship-logo.svg" style="width: 3.5rem; margin: 0.5rem 1rem;" alt="">
+                    </div>
+                </div>                
                 <div class="card-info">
                     <div class="card-title">
                         <h3>Battleship game</h3>
@@ -63,10 +72,14 @@
                         maxime reiciendis officia possimus laboriosam!                      
                     </p>
                 </div>
-            </div>
+            </div>            
             <div class="card">
-                <img src="assets/images/weather.png" alt="">
-                <img class="top-image" src="assets/images/weather-app.png" alt="">
+                <div class="card-image">
+                    <img src="assets/images/weather-app.png" alt="">
+                    <div class="card-image-cover">
+                        <img src="assets/images/weather-logo.svg" style="width: 2.5rem; margin: 0.5rem 1rem;" alt="">
+                    </div>
+                </div>
                 <div class="card-info">
                     <div class="card-title">
                         <h3>Weather app</h3>
@@ -85,8 +98,12 @@
                 </div>
             </div>
             <div class="card">
-                <img src="assets/images/todo.png" alt="">
-                <img class="top-image" src="assets/images/todo-list.png" alt="">
+                <div class="card-image">
+                    <img src="assets/images/todo-list.png" alt="">
+                    <div class="card-image-cover">
+                        <img src="assets/images/todo-logo.svg" style="width: 2rem; margin: 1rem 1.2rem;" alt="">
+                    </div>
+                </div>
                 <div class="card-info">
                     <div class="card-title">
                         <h3>Todo list</h3>
@@ -105,8 +122,60 @@
                 </div>
             </div>           
             <div class="card">
-                <img src="assets/images/calculator-cover.png" alt="">
-                <img class="top-image" src="assets/images/calculator.png" alt="">
+                <div class="card-image">
+                    <img src="assets/images/tic-tac-toe.png" alt="">
+                    <div class="card-image-cover">
+                        <img src="assets/images/tic-tac-toe-logo.svg" style="width: 1.9rem; margin: 1.3rem 1.5rem; stroke-width: 5px;" alt="">
+                    </div>
+                </div>
+                <div class="card-info">
+                    <div class="card-title">
+                        <h3>Tic-tac-toe</h3>
+                        <div class="card-links">
+                            <a href="https://github.com/NRG55/tic-tac-toe" target="_blank">
+                                <img src="assets/icons/github.svg" alt="" aria-hidden="true">
+                            </a>
+                            <a href="https://nrg55.github.io/tic-tac-toe" target="_blank">
+                                <img src="assets/icons/open.svg" alt="" aria-hidden="true">
+                            </a>
+                        </div>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Necessitatibus qui dolor 
+                        maxime reiciendis officia possimus laboriosam!                      
+                    </p>
+                </div>
+            </div> 
+            <div class="card">
+                <div class="card-image">
+                    <img src="assets/images/admin-dashboard.png" alt="">
+                    <div class="card-image-cover">
+                        <img src="assets/images/admin-dashboard-logo.svg" style="width: 2.2rem; margin: 1rem 1rem;" alt="">
+                    </div>
+                </div>
+                <div class="card-info">
+                    <div class="card-title">
+                        <h3>Admin dashboard</h3>
+                        <div class="card-links">
+                            <a href="https://github.com/NRG55/admin-dashboard" target="_blank">
+                                <img src="assets/icons/github.svg" alt="" aria-hidden="true">
+                            </a>
+                            <a href="https://nrg55.github.io/admin-dashboard" target="_blank">
+                                <img src="assets/icons/open.svg" alt="" aria-hidden="true">
+                            </a>
+                        </div>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Necessitatibus qui dolor 
+                        maxime reiciendis officia possimus laboriosam!                      
+                    </p>
+                </div>
+            </div> 
+            <div class="card">
+                <div class="card-image">
+                    <img src="assets/images/calculator.png" alt="">
+                    <div class="card-image-cover">
+                        <img src="assets/images/calculator-logo.svg" style="width: 2.5rem; margin: 1rem 0.8rem;" alt="">
+                    </div>
+                </div>
                 <div class="card-info">
                     <div class="card-title">
                         <h3>Calculator</h3>
@@ -123,31 +192,42 @@
                         maxime reiciendis officia possimus laboriosam!                      
                     </p>
                 </div>
-            </div>
+            </div>                
         </div>
     </main>
     <footer>
-        <div class="contact-info-container">
-            <h2>Contact me</h2>
-            <p>Please get in touch if you think our work could be mutually beneficial!
-            </p>
-            <div class="contact-address">1234 Random Road <br/> Random Town, California 12345</div>
-            <div class="contact-phone">555-555-5555</div>
-            <div class="contact-email">random.address.not.real@gmail.com</div>
-            <div class="social-media-links-container">
-                <a href="https://github.com/NRG55" target="_blank" aria-level="Github profile">
-                    <img src="assets/icons/github-white.svg" alt="" aria-hidden="true">
-                </a>
-                <a href="https://www.linkedin.com" target="_blank" aria-level="LinkedIn profile">
-                    <img src="assets/icons/linkedin-white.svg" alt="" aria-hidden="true">
-                </a>
-                <a href="https://x.com" target="_blank" aria-level="Twitter profile">
-                    <img src="assets/icons/twitter-white.svg" style="width: 1.2rem;" aria-hidden="true">
-                </a>
+        <div class="footer-content">
+            <div class="contact-info-container">
+                <h2>Contact me</h2>
+                <p>Please get in touch if you think our work could be mutually beneficial!
+                </p>
+                <div class="contact-address">1234 Random Road <br/> Random Town, California 12345</div>
+                <div class="contact-phone">
+                    <img src="assets/icons/phone.svg" alt="" aria-hidden="true">
+                    555-555-5555
+                </div>
+                <div class="contact-email">
+                    <img src="assets/icons/email.svg" alt="" aria-hidden="true">
+                    random.address.not.real@gmail.com
+                </div>
+                <div class="social-media-links-container">
+                    <a href="https://github.com/NRG55" target="_blank" aria-level="Github profile">
+                        <img src="assets/icons/github-yellow.svg" alt="" aria-hidden="true">
+                    </a>
+                    <a href="https://www.linkedin.com" target="_blank" aria-level="LinkedIn profile">
+                        <img src="assets/icons/linkedin-yellow.svg" alt="" aria-hidden="true">
+                    </a>
+                    <a href="https://x.com" target="_blank" aria-level="Twitter profile">
+                        <img src="assets/icons/twitter-yellow.svg" style="width: 1.7rem;" aria-hidden="true">
+                    </a>
+                </div>
+            </div>        
+            <div class="footer-image-container">
+                <picture>
+                    <source srcset="assets/images/footer-image.jpg" media="(min-width: 1024px)">                                     
+                    <img src="assets/images/footer-image-mobile.jpg" alt="">
+                </picture>               
             </div>
-        </div>        
-        <div class="footer-image-container">
-            <img src="assets/images/interaction.jpg" alt="">
         </div>
     </footer>    
 </body>
